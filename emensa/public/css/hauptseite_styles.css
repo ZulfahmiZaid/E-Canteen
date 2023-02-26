@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: block , serif;
+}
+@font-face {
+    font-family: block;
+    src: url("../fonts/Bungee-Regular.otf");
+}
+html,body {
+    min-width: 1500px;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: linear-gradient(darkorange,lightcoral,darkred);
+}
+header{
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-bottom: 1rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color:white;
+}
+.Logo{
+    padding-top: 1rem;
+    text-align: center;
+}
+nav{
+   padding-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav a{
+    display: block;
+}
+.Gerichte{
+    height: calc(100vh - 5rem);
+    width: 100vw;
+    min-width: 1500px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+}
+.ArrowRight, .ArrowLeft{
+    font-size: 2.5rem;
+    display: grid;
+    place-items: center;
+    padding-bottom: 5rem;
+}
+.ArrowLeft > i:hover, .ArrowRight > i:hover {
+    color: white;
+    cursor: pointer;
+}
+.ArrowRight{
+    padding-right: 10px;
+}
+.slide-element{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-size: cover;
+    grid-template-columns: 60% 40%;
+    background-color: hsl(0,0%,0%,0.7);
+    box-sizing: unset;
+}
+.Description{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.Ratings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Description p,.Stars, .Feedbacks{
+    overflow-y: auto;
+}
+.Description p{
+    background-color: hsla(0, 100%, 100%, 0.5);
+    border-radius: 5px 5px 0 0;
+    padding-left: 1rem;
+    font-style: italic;
+    text-align: left;
+    width: 80%;
+}
+.Description > .Price{
+    border-radius: 0 0 5px 5px;
+    padding-right: 1rem;
+    text-align: right;
+}
+.Feedbacks{
+    border-radius: 5px;
+    width: 85%;
+}
+.Stars{
+    width: 85%;
+    display: flex;
+    justify-content: space-evenly;
+    background: none;
+    align-items: center;
+    height: 15%;
+}
+/* Star Styling*/
+.fa-star{
+    font-size: 4rem;
+    color: yellow;
+}
+
+/* Comments Styling */
+.Feedbacks{
+    display: grid;
+    grid-template-rows: auto 3rem;
+    height: 70%;
+    overflow: hidden;
+    text-align: center;
+}
+.Comments{
+    width: 96%;
+    height: 90%;
+    margin: auto;
+    overflow-y: auto;
+    background-color: hsl(0, 0%, 0%, 0.8);
+    border-radius: 5px;
+}
+.Comments li{
+    width: 95%;
+    margin: 10px auto 0 auto;
+    background-color: hsl(0,100%,100%,0.6);
+    display: block;
+    border-radius: 5px;
+}
+.Feedbacks > p > a{
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: darkorange;
+    border-radius: 5px;
+    box-shadow: 0px 4px #8c4e02;
+    position: relative;
+    transition: all ease;
+}
+.Feedbacks > p > a:hover{
+    color: white;
+}
+.Feedbacks > p > a:active{
+    box-shadow: none;
+    top: 4px;
+}
+.AM > label[for="Member-Feedback"]{
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-left: 15px;
+    color: #F5F5DC;
+}
+.About{
+    height: 100vh;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+.Intro{
+    height: 75%;
+    padding-top: 20px;
+    text-align: center;
+    background-color: hsl(0,0%,0%,0.7);
+    color: #F5F5DC;
+}
+.Intro > p::-webkit-scrollbar,
+.Comments::-webkit-scrollbar,
+.NW-Form::-webkit-scrollbar{
+    width: 5px;
+}
+.Intro > p::-webkit-scrollbar-thumb,
+.Comments::-webkit-scrollbar-thumb,
+.NW-Form::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background-color: rgb(232, 221, 221);
+}
+.Intro > p::-webkit-scrollbar-track,
+.Comments::-webkit-scrollbar-track,
+.NW-Form::-webkit-scrollbar-track{
+    background-color: transparent;
+    margin-block: 15px;
+}
+.Intro p{
+    width: 80%;
+    max-height: 70%;
+    overflow-y: auto;
+    margin: 0 auto 0 auto;
+}
+.Zahlen{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 65%;
+}
+.Besucher, .NW-Anmeldungen, .AnzahlSpeisen{
+    width: 25%;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 60% auto;
+    place-items: center;
+    background-image: linear-gradient(45deg, darkorange, #E3963E, white);
+}
+.Number{
+    font-size: 3rem;
+}
+.Newsletteranmeldung{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+}
+.Quote, .NW-Form{
+    width: 90%;
+    height: 90%;
+}
+.Quote{
+    display: grid;
+    place-items: center;
+}
+.Quote > h1 {
+    text-align: center;
+    font-size: 4.5rem;
+}
+.NW-Form{
+    height: 80%;
+    background-color: hsl(0,0%,0%,0.7);
+    border-radius: 20px;
+    display: flex;
+    overflow-y: auto;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+.NW-Form h2{
+    padding-top: 20px;
+    color: #F5F5DC;
+}
+.AlertNewsletter, .AlertFeedback{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    font-size: 0.9rem;
+    color: #f1f117;
+    left: 70px;
+}
+.AlertFeedback{
+    top: 260px;
+}
+span.Subscribed, span.AlreadySub{
+    color: darkturquoise;
+}
+span.AlreadyMember, span.NotSub{
+    color: crimson;
+}
+form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 80%;
+    background-color: hsla(0, 0%, 8%, 0.7);
+    color: darkgray;
+    border: unset;
+    border-radius: 5px;
+    padding-left: 15px ;
+}
+form input{
+    height: 2rem;
+}
+form textarea{
+    height: 5.5rem;
+}
+form > input[type="submit"]{
+    margin-top: 1rem;
+    background-color: lightseagreen;
+    position: relative;
+    color: black;
+    box-shadow: 0px 4px #096460;
+    transition: all ease;
+}
+form > input[type="submit"]:hover{
+    color: white;
+    cursor: pointer;
+    background-color: #1ca49d;
+}
+form > input[type="submit"]:active{
+    top: 5px;
+    box-shadow: none;
+}
+footer{
+    height: 10%;
+    background-color: black;
+    color: ghostwhite;
+    display: grid;
+    place-items: center;
+}
+footer > ul > li{
+    list-style: none;
+    text-align: center;
+    display: block;
+}
+footer > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+footer > ul > li:not(:last-of-type)::after{
+    content: " | ";
+}
+
+@media screen and (max-width: 1500px){
+    html{
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+    .AM > input[type="submit"]{
+        margin-bottom: 20px;
+    }
+    .Intro > p{
+        height: 60%;
+    }
+    .fa-star{
+       font-size: 3rem;
+    }
+}

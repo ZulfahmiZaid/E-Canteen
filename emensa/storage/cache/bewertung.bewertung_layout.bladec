@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>E-Mensa Rating</title>
+ <?php echo $this->yieldContent("cssExtra"); ?>
+</head>
+<body>
+<a class="Return" href="/hauptseite_Emensa"><i class="fa-solid fa-reply"></i></a>
+<div class="NewRating">
+ <div class="Food">
+ <?php echo $this->yieldContent("FoodDesc"); ?>
+ </div>
+ <div class="Feedback">
+ <?php echo $this->yieldContent("UserFeedback"); ?>
+ </div>
+</div>
+<div class="OldRating">
+ <?php echo $this->yieldContent("last30"); ?>
+</div>
+<?php echo $this->yieldContent("benutzer"); ?>
+</body>
+</html>

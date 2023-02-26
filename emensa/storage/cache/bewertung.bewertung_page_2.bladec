@@ -1,0 +1,51 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection("cssExtra"); ?>
+ <script src="https://kit.fontawesome.com/4bafb4d0bb.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="/css/own_bewertung.css">
+
+ <script src="/js/jquery-3.6.2.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection("benutzer"); ?>
+ <div class="Card">
+ <div class="UserData">
+ <p class="Return">
+ <a href="/bewertung?gerichtID=<?php echo \htmlentities($_SESSION['auswahl']??'', ENT_QUOTES, 'UTF-8', false); ?>"><i class="fa-solid fa-reply"></i></a>
+ <a href="/hauptseite_Emensa"><i class="fa-solid fa-house"></i></a>
+ </p>
+ <div class="Circle">
+ <i class="fa-solid fa-user"></i> <br>
+ <p><?php echo \htmlentities($_SESSION['angemeldet']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ </div>
+ <div class="UserRating">
+ <table class="Scrollable">
+ <thead>
+ <tr>
+ <th>Meals</th>
+ <th>Reviews</th>
+ <th>Stars</th>
+ <th>Actions</th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php $__currentLoopData = $bewertungen; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $value): $loop = $this->incrementLoopIndices();  ?>
+ <tr class="Data">
+ <!--
+ <td><input type="checkbox" name="toDelete[]" value="$value["bewertung_id"]"></td>
+ -->
+ <td><?php echo \htmlentities($value['gerichtname']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value['description']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><?php echo \htmlentities($value['stern']??'', ENT_QUOTES, 'UTF-8', false); ?></td>
+ <td><a href="/bewertung_to_delete?bewertungID=<?php echo \htmlentities($value["bewertung_id"]??'', ENT_QUOTES, 'UTF-8', false); ?>">Delete</a></td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+ </div>
+ </div>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild("bewertung.own_bewertung"); } ?>

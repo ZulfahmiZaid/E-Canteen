@@ -1,0 +1,82 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection("cssExtra"); ?>
+ <script src="https://kit.fontawesome.com/4bafb4d0bb.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="/css/bewertung_main.css">
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection("FoodDesc"); ?>
+ <h1><?php echo \htmlentities($gerichtData[0]["name"]??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <div class="FoodImg" style="background-image: url('../img/<?php echo \htmlentities($gerichtData[0]['image']??'', ENT_QUOTES, 'UTF-8', false); ?>')"></div>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection("UserFeedback"); ?>
+ <div class="FeedbackForm">
+ <form method="post" action="/bewertung_verifizieren">
+ <div class="Radio">
+ <label for="sterne">Stars: </label>
+
+ <input name="sterne" id="sehr schlecht" type="radio" value="gross" required>
+ <label for="sehr schlecht">gross</label>
+
+ <input name="sterne" id="schlecht" type="radio" value="bad" required>
+ <label for="schlecht">bad</label>
+
+ <input name="sterne" id="mittel" type="radio" value="normal" required>
+ <label for="mittel">normal</label>
+
+ <input name="sterne" id="gut" type="radio" value="good" required>
+ <label for="gut">good</label>
+
+ <input name="sterne" id="sehr gut" type="radio" value="delicious" required>
+ <label for="sehr gut">delicious</label>
+ </div>
+ <textarea name="kommentare" id="kommentare" maxlength = "200"
+ minlength="5" rows="5" placeholder="Your Opinion..."></textarea>
+ <div class="SterneUndSubmit">
+ <input type="submit" value="Submit">
+ </div>
+ </form>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection("last30"); ?>
+ <h1>Reviews</h1>
+ <div class="Comments">
+ <?php $__currentLoopData = $last30; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $value): $loop = $this->incrementLoopIndices();  ?>
+ <div class="AllUser">
+ <div class="Icon">
+ <i class="fa-solid fa-user"></i>
+ </div>
+ <div class="NameAndComment">
+ <p>
+ <b>Name:</b> &nbsp;<?php echo \htmlentities($value['user']??'', ENT_QUOTES, 'UTF-8', false); ?> &nbsp;
+ <?php if($_SESSION["admin"]): ?>
+ <?php if($value["hervorgehoben"]): ?>
+ <a href="/bewertung_to_unhighlight?bewertungID=<?php echo \htmlentities($value['bewertung_id']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ style="color: #e01f1f">
+ Unhighlight
+ </a>
+ <?php else: ?>
+ <a href="/bewertung_to_highlight?bewertungID=<?php echo \htmlentities($value['bewertung_id']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ style="color: darkcyan">
+ Hightlight
+ </a>
+ <?php endif; ?>
+ <?php endif; ?>
+ </p>
+ <p>
+ <b>Rating:</b> &nbsp;<?php echo \htmlentities($value['stern']??'', ENT_QUOTES, 'UTF-8', false); ?><br>
+ <?php echo \htmlentities($value['description']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="OwnReviews">
+ <a href="/meinebewertungen">My Reviews</a>
+ </div>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild("bewertung.bewertung_layout"); } ?>

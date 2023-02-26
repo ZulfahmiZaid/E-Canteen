@@ -1,0 +1,199 @@
+@font-face {
+    font-family: block;
+    src: url("../fonts/Bungee-Regular.otf");
+}
+*{
+    font-family: block, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    min-width: 1536px;
+    min-height: 700px;
+    overflow: auto;
+}
+body{
+    display: grid;
+    position: relative;
+    grid-template-columns: 60% 40%;
+    background-image: linear-gradient(darkorange,lightcoral,darkred);
+}
+.Return{
+    position: absolute;
+    top: -25px;
+    left: 15px;
+    font-size: 3rem;
+}
+.fa-reply{
+    color: black;
+}
+.fa-reply:hover{
+    color: white;
+    animation: pop 0.2s linear;
+}
+.NewRating{
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+.Food{
+    display: grid;
+    grid-template-rows: 5rem auto;
+    text-align: center;
+}
+.FoodImg {
+    width: 80%;
+    height: 90%;
+    margin: 0 auto 0 auto;
+    background-size: cover;
+    border-radius: 10px;
+}
+.Feedback{
+    display: flex;
+    justify-content: center;
+}
+.FeedbackForm{
+    width: 80%;
+    height: 90%;
+}
+.Radio{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+label{
+  padding-top: 5px;
+}
+input + label{
+    padding-top: 8px;
+    font-size: 0.8rem;
+}
+textarea{
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: hsla(0, 0%, 8%, 0.7);
+    color: darkgray;
+    border: 1px solid black ;
+    height: 8rem;
+}
+form{
+    text-align: center;
+}
+form  input[type="submit"]{
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    border: unset;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    position: relative;
+    color: black;
+    box-shadow: 0px 4px #096460;
+    transition: all ease;
+}
+form  input[type="submit"]:hover{
+    color: white;
+    cursor: pointer;
+    background-color: #1ca49d;
+}
+form  input[type="submit"]:active{
+    top: 5px;
+    box-shadow: none;
+}
+input[type="radio"]:hover{
+    cursor: pointer;
+}
+.OldRating{
+    display: grid;
+    grid-template-rows: 5rem auto 15%;
+    background-color: hsl(0,0%,0%,0.6);
+    overflow: hidden;
+}
+.OldRating a{
+    text-decoration: none;
+    color: black;
+}
+.OldRating h1{
+    color: #F0EAD6;
+}
+.OldRating h1{
+    text-align: center;
+}
+.OwnReviews{
+    margin-right: 6%;
+    text-align: right;
+    padding-top: 30px;
+}
+.OwnReviews a{
+    background-color: darkorange;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 4px #8c4e02;
+    position: relative;
+    transition: all ease;
+}
+.OwnReviews a:hover{
+    color: white;
+}
+.OwnReviews a:active{
+    box-shadow: none;
+    top: 4px;
+}
+.Comments{
+    overflow-y: scroll;
+}
+.Comments::-webkit-scrollbar{
+    width: 5px;
+}
+.Comments::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background-color: rgb(232, 221, 221);
+}
+.Comments::-webkit-scrollbar-track{
+    background-color: transparent;
+    margin-block: 15px;
+}
+.AllUser{
+    width: 90%;
+    height: auto;
+    display: grid;
+    margin: 0 auto 20px auto;
+    grid-template-columns: 20% 80%;
+    border-radius: 8px;
+    background-color: hsl(45, 29%, 97%);
+    border: 1px solid black;
+}
+.AllUser p:nth-child(1),
+.AllUser p:nth-child(2){
+    border-left: 1px solid black;
+}
+.AllUser p:nth-child(1){
+    border-bottom: 1px solid black;
+}
+.AllUser p{
+    padding-left: 10px;
+    position: relative;
+}
+.AllUser a{
+    position: absolute;
+    right: 10px;
+}
+.Icon{
+    display: grid;
+    place-items: center;
+}
+.fa-user{
+    font-size: 4rem;
+}
+
+@keyframes pop {
+    50%{
+        transform: scale(1.2);
+    }
+}

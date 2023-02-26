@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>E-Mensa Signup</title>
+ <?php echo $this->yieldContent('cssExtra'); ?>
+</head>
+<body>
+ <?php echo $this->yieldContent('newdata'); ?>
+ <?php echo $this->yieldContent('successful'); ?>
+</body>
+</html>

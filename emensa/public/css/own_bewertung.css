@@ -1,0 +1,155 @@
+@font-face {
+    font-family: block;
+    src: url("../fonts/Bungee-Regular.otf");
+}
+*{
+    font-family: block, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    min-width: 1140px;
+    min-height: 600px;
+    overflow: hidden;
+}
+body{
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(darkorange,lightcoral,darkred);
+}
+.Card{
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 0%, 0.9);
+    position: relative;
+}
+.Return{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.fa-reply, .fa-house{
+    padding: 5px;
+    font-size: 2rem;
+    color: white;
+}
+.fa-reply:hover, .fa-house:hover{
+    color: darkturquoise;
+    animation: pop 0.2s linear;
+}
+.UserData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 5px solid white;
+}
+.Circle{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Circle p{
+   font-size: 1.3rem;
+}
+.fa-user{
+    font-size: 6rem;
+}
+.UserRating{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+}
+.Header{
+    width: 90%;
+    height: 10%;
+}
+.Scrollable{
+    width: 90%;
+    height: 95%;
+    table-layout: fixed;
+}
+tbody,thead tr{
+    display: block;
+}
+tbody{
+    height: 95%;
+    background-color: wheat;
+    border-radius: 10px;
+    overflow: auto;
+}
+th{
+    color: white;
+    font-size: 1.5rem;
+}
+td,th{
+    text-align: center;
+    width: 300px;
+    height: 3rem;
+}
+th:not(:nth-child(1)){
+   padding-right: 10px;
+}
+.Data a{
+    padding: 0 10px 0 10px;
+    border-radius: 10px;
+    background-color: crimson;
+    text-decoration: none;
+    position: relative;
+    color: black;
+    box-shadow: 0px 4px #77001e;
+    transition: all ease;
+}
+.Data a:hover{
+    color: white;
+    cursor: pointer;
+    background-color: #ec4367;
+}
+.Data a:active{
+    top: 4px;
+    box-shadow: none;
+}
+tbody > tr > td:nth-child(2){
+    padding-right: 20px;
+}
+tbody > tr > td:nth-child(3){
+    padding-right: 20px;
+}
+table{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1500px) and (max-height: 800px) {
+    html{
+        overflow: auto;
+    }
+    .Circle{
+        width: 200px;
+        height: 200px;
+    }
+    .Circle p{
+        font-size: 1rem;
+    }
+    .fa-user{
+        font-size: 4.5rem;
+    }
+}
+
+@keyframes pop {
+    50%{
+        transform: scale(1.2);
+    }
+}

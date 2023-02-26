@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>E-Mensa Rating</title>
+ <?php echo $this->yieldContent("cssExtra"); ?>
+</head>
+<body>
+<?php echo $this->yieldContent("benutzer"); ?>
+</body>
+</html>

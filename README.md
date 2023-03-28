@@ -44,6 +44,8 @@ We work in team of 2 people to complete a series of objectives in 6 Milestones w
 
 After submission, I took some time redesigning and added some of my own desired features.
 
+The contact form is built with [FormSubmit](https://formsubmit.co/) API
+
 <br>
 
 # Contact

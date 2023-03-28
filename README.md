@@ -42,7 +42,7 @@ This project was originally a group assignment for my database and webtechnology
 
 We work in team of 2 people to complete a series of objectives in 6 Milestones with the purpose of learning how PHP and Databases work.
 
-After submission, I took sometime redesigning and added some of my own desired features.
+After submission, I took some time redesigning and added some of my own desired features.
 
 <br>
 
